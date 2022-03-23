@@ -1,0 +1,103 @@
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-image: url('../images/cat.svg');
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    border-radius: 25%;
+}
+
+p {
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    color:rgb(116, 105, 119);
+}
+
+.top_nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.top_nav .bottom_nav {
+    display: flex;
+    flex-direction: row;
+}
+
+/* If the screen size is smaller than 769px, set the navigation to 2 robots in a row */
+
+@media only screen and (max-width: 769px) {
+  .top_nav .bottom_nav {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.links {
+    /*background-image: url('../images/pastel_hearts.png');*/
+    position: relative;
+    display: inline-flex;
+    transition: transform 1s;
+}
+
+.link_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#link_1:hover {
+    transform: rotate(180deg);
+}
+
+#link_2:hover {
+    transform: rotate(360deg);
+    transition: 1s;
+}
+
+#link_3:hover {
+    transform: rotate(-180deg);
+    transition: 1s;
+}
+
+/*#link_4:hover {
+    transform: rotate(-45deg);
+    transition: 1s;
+}
+
+#link_5:hover {
+    transform: rotate(-180deg);
+    transition: 1s;
+}
+
+#link_6:hover {
+    transform: rotate(360deg);
+    transition: 1s;
+} */
+
+/* The overlay effect - lays on top of the container and over the image */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0,0,0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: larger;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 10px;
+  text-align: center;
+}
+
+/* When you mouse over the container, fade in the overlay title */
+.links:hover .overlay {
+  opacity: 1;
+}
+
